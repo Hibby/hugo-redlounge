@@ -24,7 +24,12 @@
         {{ if .Params.categories }}
           <div class="post-categories">
           {{ $Site := .Site }}
-          {{ range .Params.categories }}
+	  {{ if .Params.galleries }}
+	    {{ range .Params.galleries }}
+	    <a class="post-category post-gallery-{{ . | urlize }}" href="{{ $Site.BaseURL}}/galleries/{{ . | urlize }}">{{ . }}</a>
+	    {{ end }}
+	  {{end}} 
+	  {{ range .Params.categories }}
             <a class="post-category post-category-{{ . | urlize }}" href="{{ $Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>
           {{ end }}
           </div>

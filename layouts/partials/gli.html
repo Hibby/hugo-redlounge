@@ -1,0 +1,5 @@
+    <section  class="post">
+      {{ if .Params.image_name }}
+        <a href="/{{ .Params.image_name }}" data-lightbox="set1" ><img src="/{{ .Params.image_name }}" style="max-width: 60%;" /></a>
+      {{ end }}
+    </section>
